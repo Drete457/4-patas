@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-PT" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/imagens/logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Canto das Patas & Pelos</title>
+    <meta name="description" content="Hotel particular, bem-estar e produtos artesanais para animais de estimação." />
+    <meta name="theme-color" content="#f97316" />
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Canto das Patas & Pelos" />
+    <meta property="og:description" content="Hotel particular, cuidado afetivo e produtos artesanais para o bem-estar do teu companheiro." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_PT" />
+    <meta property="og:image" content="/imagens/logo.jpg" />
+    <meta property="og:image:alt" content="Logotipo Canto das Patas & Pelos" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Canto das Patas & Pelos" />
+    <meta name="twitter:description" content="Hotel particular, cuidado afetivo e produtos artesanais." />
+    <meta name="twitter:image" content="/imagens/logo.jpg" />
+    <link rel="canonical" href="https://www.exemplo.com/" />
+    <meta name="author" content="Canto das Patas & Pelos" />
+    <meta name="robots" content="index,follow" />
+  </head>
+  <body class="antialiased bg-neutral-50 text-neutral-800">
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && systemDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <a href="#conteudo-principal" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white border border-neutral-300 px-4 py-2 rounded shadow-soft text-sm font-medium">Saltar para conteúdo</a>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

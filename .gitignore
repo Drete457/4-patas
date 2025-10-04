@@ -1,0 +1,41 @@
+# Node / Vite / React
+node_modules/
+.dist/
+dist/
+.tmp/
+.temp/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Env files
+.env
+.env.*.local
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Coverage / tests
+coverage/
+
+# Output of Tailwind / PostCSS caches
+*.cache
+
+# Lock files (se usar apenas um, remove os outros se não forem usados)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Misc
+*.swp
+*.swo

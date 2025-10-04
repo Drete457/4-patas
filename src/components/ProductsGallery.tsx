@@ -1,0 +1,31 @@
+import { products } from '../data/products';
+
+export default function ProductsGallery() {
+  return (
+  <section id="produtos" className="section bg-white dark:bg-neutral-950">
+      <div className="container-section">
+        <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold title-gradient mb-3">Produtos Artesanais</h2>
+            <p className="text-neutral-600 dark:text-neutral-300 max-w-xl">Qualidade afetiva e responsabilidade em cada detalhe. Uma amostra do que produzimos com carinho.</p>
+          </div>
+          <a href="#contacto" className="btn-primary">Encomendar</a>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {products.map(p => (
+            <div key={p.name} className="group relative bg-sand dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-soft border border-neutral-200 dark:border-neutral-700">
+              <div className="aspect-[4/5] overflow-hidden">
+                <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition" />
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold mb-1 text-neutral-800 dark:text-neutral-100">{p.name}</h3>
+                <p className="text-xs text-neutral-600 dark:text-neutral-300 leading-relaxed">{p.desc}</p>
+              </div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black/50 via-black/10 to-transparent transition" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
