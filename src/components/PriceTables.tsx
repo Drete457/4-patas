@@ -2,6 +2,13 @@ import { plans, extras } from '../data/pricing';
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function PriceTables() {
+  const getWhatsAppLink = (planId: string, planName: string) => {
+    const message = planId === 'exoticos' 
+      ? `Olá! Gostaria de saber os planos para os exóticos`
+      : `Olá! Gostaria de reservar o plano: ${planName}`;
+    return `https://wa.me/351919245067?text=${encodeURIComponent(message)}`;
+  };
+
   return (
     <section id="precos" className="section bg-sand/60 dark:bg-neutral-950">
       <div className="container-section">
@@ -43,7 +50,9 @@ export default function PriceTables() {
                 </ul>
                 <div className="mt-auto">
                   <a
-                    href="#contacto"
+                    href={getWhatsAppLink(plan.id, plan.name)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={
                       'w-full inline-flex justify-center btn-primary text-sm ' +
                       (plan.highlight ? '' : '!bg-neutral-800 dark:!bg-neutral-200 dark:!text-neutral-900 hover:!bg-neutral-700 dark:hover:!bg-white')
@@ -56,6 +65,50 @@ export default function PriceTables() {
             </div>
           ))}
         </div>
+        
+        {/* O que Trazer */}
+        <div className="mb-16">
+          <h3 className="text-xl font-semibold mb-6 text-neutral-800 dark:text-neutral-100 text-center">O que Trazer</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-5">
+              <h4 className="font-semibold text-brand-primary mb-2 text-sm">🐶 Cães</h4>
+              <ul className="text-xs text-neutral-600 dark:text-neutral-300 space-y-1 leading-relaxed">
+                <li>• Boletim de vacinas</li>
+                <li>• Taças para água e comida</li>
+                <li>• Comida habitual do animal</li>
+                <li>• Manta ou objeto com cheiro do dono</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-5">
+              <h4 className="font-semibold text-brand-primary mb-2 text-sm">🐱 Gatos</h4>
+              <ul className="text-xs text-neutral-600 dark:text-neutral-300 space-y-1 leading-relaxed">
+                <li>• Taças para água e comida</li>
+                <li>• Comida habitual do animal</li>
+                <li>• Areia e pá</li>
+                <li>• Objeto com cheiro do dono (opcional)</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-5">
+              <h4 className="font-semibold text-brand-primary mb-2 text-sm">🐾 Exóticos</h4>
+              <ul className="text-xs text-neutral-600 dark:text-neutral-300 space-y-1 leading-relaxed">
+                <li>• Gaiola ou terrário</li>
+                <li>• Comida específica</li>
+                <li>• Utensílios necessários</li>
+                <li>• Instruções de cuidados</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-5">
+              <h4 className="font-semibold text-brand-primary mb-2 text-sm">✅ Requisitos</h4>
+              <ul className="text-xs text-neutral-600 dark:text-neutral-300 space-y-1 leading-relaxed">
+                <li>• Vacinas em dia</li>
+                <li>• Desparasitação</li>
+                <li>• Sinal de €15 para reservar</li>
+                <li>• Cães com problemas: treino ATAAC</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <div>
           <h3 className="text-xl font-semibold mb-4 text-neutral-800 dark:text-neutral-100">Extras</h3>
             <ul className="grid sm:grid-cols-3 gap-4">
