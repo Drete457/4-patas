@@ -25,8 +25,8 @@ export default function Footer() {
 
           <div>
             <h3 className="font-semibold mb-3 text-sm text-neutral-900 dark:text-white">Morada</h3>
-            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Padre+Angelo+Firmino+da+Silva+24+2Dt+Almada" target="_blank" rel="noopener noreferrer" className="text-sm text-neutral-600 dark:text-neutral-300 hover:text-brand-primary">
-              📍 Rua Padre Angelo Firmino da Silva Nº 24 2Dt<br/>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Padre+Angelo+Firmino+da+Silva+Almada" target="_blank" rel="noopener noreferrer" className="text-sm text-neutral-600 dark:text-neutral-300 hover:text-brand-primary">
+              📍 Rua Padre Angelo Firmino da Silva<br/>
               Almada
             </a>
           </div>
