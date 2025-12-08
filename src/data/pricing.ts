@@ -3,10 +3,17 @@ export interface Feature {
   included?: boolean; // true = incluído, false = não, undefined = neutro
 }
 
+export interface PricingOption {
+  animal: string;
+  duration: string;
+  price: string;
+}
+
 export interface Plan {
   id: string;
   name: string;
   price: string;
+  pricingOptions?: PricingOption[]; // Para hotel com múltiplas opções
   highlight?: boolean;
   description: string;
   features: Feature[];
@@ -17,9 +24,17 @@ export const plans: Plan[] = [
   {
     id: 'hotel',
     name: 'Hotel',
-    price: '€20/dia',
+    price: 'A partir de €15/dia',
     highlight: true,
     description: 'Estadia completa com acompanhamento personalizado. Entrada a partir das 9h30.',
+    pricingOptions: [
+      { animal: 'Cão', duration: 'Diária', price: '€20' },
+      { animal: 'Cão', duration: 'Semanal', price: '€130' },
+      { animal: 'Cão', duration: 'Mensal', price: '€500' },
+      { animal: 'Gato', duration: 'Diária', price: '€15' },
+      { animal: 'Gato', duration: 'Semanal', price: '€95' },
+      { animal: 'Gato', duration: 'Mensal', price: '€360' }
+    ],
     features: [
       { label: '1 dono com máx. 2 animais (cão+gato se comparáveis)', included: true },
       { label: 'Sem boxes, animais dormem onde quiserem', included: true },

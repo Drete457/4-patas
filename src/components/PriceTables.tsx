@@ -1,12 +1,19 @@
 import { plans, extras } from '../data/pricing';
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 
 export default function PriceTables() {
+  const [selectedAnimal, setSelectedAnimal] = useState<'Cão' | 'Gato'>('Cão');
+  const [selectedDuration, setSelectedDuration] = useState<string>('');
+
   const getWhatsAppLink = (planId: string, planName: string) => {
-    const message = planId === 'exoticos' 
-      ? `Olá! Gostaria de saber os planos para os exóticos`
-      : `Olá! Gostaria de reservar o plano: ${planName}`;
-    return `https://wa.me/351919245067?text=${encodeURIComponent(message)}`;
+    if (planId === 'exoticos') {
+      return `https://wa.me/351919245067?text=${encodeURIComponent('Olá! Gostaria de saber os planos para os exóticos')}`;
+    }
+    if (planId === 'hotel' && selectedDuration) {
+      return `https://wa.me/351919245067?text=${encodeURIComponent(`Olá! Gostaria de reservar o plano: Hotel - ${selectedAnimal} - ${selectedDuration}`)}`;
+    }
+    return `https://wa.me/351919245067?text=${encodeURIComponent(`Olá! Gostaria de reservar o plano: ${planName}`)}`;
   };
 
   return (
@@ -17,53 +24,116 @@ export default function PriceTables() {
           <p className="text-neutral-600 dark:text-neutral-300">Escolhe o formato ideal para a rotina do teu companheiro. Transparência e carinho em cada opção.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {plans.map(plan => (
-            <div
-              key={plan.id}
-              className={
-                'relative rounded-2xl border shadow-soft flex flex-col bg-white dark:bg-neutral-900 ' +
-                (plan.highlight
-                  ? 'border-brand-primary ring-2 ring-brand-primary/40'
-                  : 'border-neutral-200 dark:border-neutral-700')
-              }
-            >
-              {plan.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow">Mais Popular</span>
-              )}
-              <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-lg font-semibold mb-1 text-neutral-900 dark:text-white">{plan.name}</h3>
-                <p className="text-3xl font-bold mb-2 text-brand-primary">{plan.price}</p>
-                <p className="text-sm text-neutral-600 dark:text-neutral-200 mb-4 leading-relaxed">{plan.description}</p>
-                <ul className="space-y-2 text-sm mb-6">
-                  {plan.features.map(f => (
-                    <li key={f.label} className="flex items-start gap-2">
-                      {f.included ? (
-                        <CheckIcon className="w-5 h-5 text-brand-primary shrink-0" />
-                      ) : f.included === false ? (
-                        <XMarkIcon className="w-5 h-5 text-neutral-300 dark:text-neutral-600 shrink-0" />
-                      ) : (
-                        <span className="w-5 h-5 shrink-0" />
-                      )}
-                      <span className={f.included ? 'text-neutral-700 dark:text-neutral-200' : 'text-neutral-500 dark:text-neutral-500 line-through'}>{f.label}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-auto">
-                  <a
-                    href={getWhatsAppLink(plan.id, plan.name)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={
-                      'w-full inline-flex justify-center btn-primary text-sm ' +
-                      (plan.highlight ? '' : '!bg-neutral-800 dark:!bg-neutral-200 dark:!text-neutral-900 hover:!bg-neutral-700 dark:hover:!bg-white')
-                    }
-                  >
-                    {plan.ctaLabel}
-                  </a>
+          {plans.map(plan => {
+            const animalOptions = plan.pricingOptions?.filter(opt => opt.animal === selectedAnimal) || [];
+            
+            return (
+              <div
+                key={plan.id}
+                className={
+                  'relative rounded-2xl border shadow-soft flex flex-col bg-white dark:bg-neutral-900 ' +
+                  (plan.highlight
+                    ? 'border-brand-primary ring-2 ring-brand-primary/40'
+                    : 'border-neutral-200 dark:border-neutral-700')
+                }
+              >
+                {plan.highlight && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow">Mais Popular</span>
+                )}
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-lg font-semibold mb-1 text-neutral-900 dark:text-white">{plan.name}</h3>
+                  <p className="text-3xl font-bold mb-2 text-brand-primary">{plan.price}</p>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-200 mb-4 leading-relaxed">{plan.description}</p>
+                  
+                  {/* Seleção de Animal para Hotel */}
+                  {plan.pricingOptions && (
+                    <div className="mb-4">
+                      <div className="flex gap-2 mb-3">
+                        <button
+                          onClick={() => { setSelectedAnimal('Cão'); setSelectedDuration(''); }}
+                          className={
+                            'flex-1 py-2 px-3 rounded-lg text-sm font-medium transition border ' +
+                            (selectedAnimal === 'Cão'
+                              ? 'bg-brand-primary text-white border-brand-primary'
+                              : 'bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700 hover:border-brand-primary')
+                          }
+                        >
+                          🐶 Cão
+                        </button>
+                        <button
+                          onClick={() => { setSelectedAnimal('Gato'); setSelectedDuration(''); }}
+                          className={
+                            'flex-1 py-2 px-3 rounded-lg text-sm font-medium transition border ' +
+                            (selectedAnimal === 'Gato'
+                              ? 'bg-brand-primary text-white border-brand-primary'
+                              : 'bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700 hover:border-brand-primary')
+                          }
+                        >
+                          🐱 Gato
+                        </button>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <p className="text-xs font-semibold text-neutral-700 dark:text-neutral-300 mb-2">Duração:</p>
+                        {animalOptions.map((option, idx) => (
+                          <label 
+                            key={idx}
+                            className="flex items-center gap-2 text-xs cursor-pointer hover:bg-neutral-50 dark:hover:bg-neutral-800 p-2 rounded transition"
+                          >
+                            <input 
+                              type="radio" 
+                              name="duration-option" 
+                              value={`${option.duration} (${option.price})`}
+                              checked={selectedDuration === `${option.duration} (${option.price})`}
+                              onChange={(e) => setSelectedDuration(e.target.value)}
+                              className="text-brand-primary focus:ring-brand-primary"
+                            />
+                            <span className="text-neutral-700 dark:text-neutral-200">
+                              <strong>{option.duration}</strong>: <span className="text-brand-primary font-semibold">{option.price}</span>
+                            </span>
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <ul className="space-y-2 text-sm mb-6">
+                    {plan.features.map(f => (
+                      <li key={f.label} className="flex items-start gap-2">
+                        {f.included ? (
+                          <CheckIcon className="w-5 h-5 text-brand-primary shrink-0" />
+                        ) : f.included === false ? (
+                          <XMarkIcon className="w-5 h-5 text-neutral-300 dark:text-neutral-600 shrink-0" />
+                        ) : (
+                          <span className="w-5 h-5 shrink-0" />
+                        )}
+                        <span className={f.included ? 'text-neutral-700 dark:text-neutral-200' : 'text-neutral-500 dark:text-neutral-500 line-through'}>{f.label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto">
+                    <a
+                      href={getWhatsAppLink(plan.id, plan.name)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => {
+                        if (plan.id === 'hotel' && !selectedDuration) {
+                          e.preventDefault();
+                          alert('Por favor, selecione uma duração antes de reservar.');
+                        }
+                      }}
+                      className={
+                        'w-full inline-flex justify-center btn-primary text-sm ' +
+                        (plan.highlight ? '' : '!bg-neutral-800 dark:!bg-neutral-200 dark:!text-neutral-900 hover:!bg-neutral-700 dark:hover:!bg-white')
+                      }
+                    >
+                      {plan.ctaLabel}
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         
         {/* O que Trazer */}
