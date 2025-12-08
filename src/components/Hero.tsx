@@ -29,7 +29,8 @@ export default function Hero() {
           <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-prose">Hotel particular, atenção personalizada e produtos artesanais pensados com amor para proporcionar segurança, conforto e enriquecimento diário.</p>
           <div className="flex flex-wrap gap-4">
             <a href="#servicos" className="btn-primary">Ver Serviços</a>
-            <a href="#contacto" className="inline-flex items-center font-medium text-brand-primary hover:text-brand-primaryDark">Falar no WhatsApp →</a>
+            <a href="#contacto" className="btn-primary">Ver Contactos</a>
+            <a href="https://wa.me/351919245067?text=Ol%C3%A1%20quero%20saber%20mais%20sobre%20os%20teus%20servi%C3%A7os." target="_blank" rel="noopener noreferrer" className="inline-flex items-center font-medium text-brand-primary hover:text-brand-primaryDark">Falar no WhatsApp →</a>
           </div>
         </div>
         
