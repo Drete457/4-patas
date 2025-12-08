@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Navbar />
-  <main id="conteudo-principal" tabIndex={-1}>
+      <main id="conteudo-principal" tabIndex={-1}>
         <Hero />
         <Services />
         <ProductsGallery />

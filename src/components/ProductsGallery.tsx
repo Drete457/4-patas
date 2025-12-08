@@ -3,10 +3,23 @@ import { products, categories, type CategoryId } from '../data/products';
 
 export default function ProductsGallery() {
   const [activeCategory, setActiveCategory] = useState<CategoryId | 'all'>('all');
+  const [showAll, setShowAll] = useState(false);
 
   const filteredProducts = activeCategory === 'all'
     ? products
     : products.filter(p => p.category === activeCategory);
+
+  const isAllCategory = activeCategory === 'all';
+  const displayLimit = 10;
+  const hasMore = isAllCategory && filteredProducts.length > displayLimit;
+  const displayedProducts = (isAllCategory && !showAll) 
+    ? filteredProducts.slice(0, displayLimit)
+    : filteredProducts;
+
+  const handleCategoryChange = (category: CategoryId | 'all') => {
+    setActiveCategory(category);
+    setShowAll(false); // Reset ao mudar de categoria
+  };
 
   return (
     <section id="produtos" className="section bg-white dark:bg-neutral-950">
@@ -22,7 +35,7 @@ export default function ProductsGallery() {
         {/* Filtros por categoria */}
         <div className="flex flex-wrap gap-2 mb-8">
           <button
-            onClick={() => setActiveCategory('all')}
+            onClick={() => handleCategoryChange('all')}
             className={
               'px-4 py-2 rounded-full text-sm font-medium transition border ' +
               (activeCategory === 'all'
@@ -35,7 +48,7 @@ export default function ProductsGallery() {
           {categories.map(cat => (
             <button
               key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
+              onClick={() => handleCategoryChange(cat.id)}
               className={
                 'px-4 py-2 rounded-full text-sm font-medium transition border ' +
                 (activeCategory === cat.id
@@ -50,7 +63,7 @@ export default function ProductsGallery() {
 
         {/* Grid de produtos */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {filteredProducts.map(p => (
+          {displayedProducts.map(p => (
             <div key={p.id} className="group relative bg-sand dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-soft border border-neutral-200 dark:border-neutral-700">
               <div className="aspect-square overflow-hidden">
                 <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition" />
@@ -65,6 +78,17 @@ export default function ProductsGallery() {
             </div>
           ))}
         </div>
+
+        {hasMore && !showAll && (
+          <div className="text-center mt-8">
+            <button 
+              onClick={() => setShowAll(true)}
+              className="btn-primary"
+            >
+              Ver Todos os Produtos ({filteredProducts.length})
+            </button>
+          </div>
+        )}
 
         {filteredProducts.length === 0 && (
           <p className="text-center text-neutral-500 dark:text-neutral-400 py-12">Sem produtos nesta categoria.</p>
