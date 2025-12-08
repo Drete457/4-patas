@@ -23,10 +23,10 @@ export default function Hero() {
     <section id="inicio" className="section pt-32 bg-gradient-to-br from-brand-primary/10 via-sand to-white dark:from-neutral-900 dark:via-neutral-900 dark:to-neutral-950">
       <div className="container-section grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-neutral-900 dark:text-white">
             <span className="title-gradient">Cuidado dedicado</span><br/>alegria e bem-estar para o seu companheiro.
           </h1>
-          <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-prose">Hotel particular, atenção personalizada e produtos artesanais pensados com amor para proporcionar segurança, conforto e enriquecimento diário.</p>
+          <p className="text-lg text-neutral-600 dark:text-neutral-200 max-w-prose">Hotel particular, atenção personalizada e produtos artesanais pensados com amor para proporcionar segurança, conforto e enriquecimento diário.</p>
           <div className="flex flex-wrap gap-4">
             <a href="#servicos" className="btn-primary">Ver Serviços</a>
             <a href="#contacto" className="btn-primary">Ver Contactos</a>

@@ -56,7 +56,7 @@ export default function ProductsGallery() {
                 <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition" />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold mb-1 text-neutral-800 dark:text-neutral-100 text-sm">{p.name}</h3>
+                <h3 className="font-semibold mb-1 text-neutral-900 dark:text-white text-sm">{p.name}</h3>
                 {p.subcategory && (
                   <span className="inline-block text-xs bg-brand-primary/10 text-brand-primary px-2 py-0.5 rounded-full">{p.subcategory}</span>
                 )}

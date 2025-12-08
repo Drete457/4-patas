@@ -14,8 +14,8 @@ export default function Services() {
               <div className="w-12 h-12 rounded-lg bg-brand-primary/10 text-brand-primary flex items-center justify-center mb-4">
                 <s.icon className="w-7 h-7" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
-              <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">{s.desc}</p>
+              <h3 className="font-semibold text-lg mb-2 text-neutral-900 dark:text-white">{s.title}</h3>
+              <p className="text-sm text-neutral-600 dark:text-neutral-200 leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>

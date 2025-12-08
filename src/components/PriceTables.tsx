@@ -24,9 +24,9 @@ export default function PriceTables() {
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow">Mais Popular</span>
               )}
               <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-lg font-semibold mb-1 text-neutral-800 dark:text-neutral-100">{plan.name}</h3>
+                <h3 className="text-lg font-semibold mb-1 text-neutral-900 dark:text-white">{plan.name}</h3>
                 <p className="text-3xl font-bold mb-2 text-brand-primary">{plan.price}</p>
-                <p className="text-sm text-neutral-600 dark:text-neutral-300 mb-4 leading-relaxed">{plan.description}</p>
+                <p className="text-sm text-neutral-600 dark:text-neutral-200 mb-4 leading-relaxed">{plan.description}</p>
                 <ul className="space-y-2 text-sm mb-6">
                   {plan.features.map(f => (
                     <li key={f.label} className="flex items-start gap-2">
