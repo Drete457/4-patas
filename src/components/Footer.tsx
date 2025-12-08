@@ -2,7 +2,7 @@ import logo from '../../imagens/logo.jpg';
 
 export default function Footer() {
   return (
-  <footer className="mt-10 border-t border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900">
+  <footer className="border-t border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900">
       <div className="container-section py-10">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="flex items-center gap-3">
