@@ -14,8 +14,8 @@ function App() {
       <main id="conteudo-principal" tabIndex={-1}>
         <Hero />
         <Services />
-        <ProductsGallery />
         <PriceTables />
+        <ProductsGallery />
         <Testimonials />
         <ContactCTA />
       </main>

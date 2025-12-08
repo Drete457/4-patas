@@ -16,7 +16,8 @@ export default function Footer() {
           <div>
             <h3 className="font-semibold mb-3 text-sm text-neutral-900 dark:text-white">Contactos</h3>
             <div className="space-y-2 text-sm text-neutral-600 dark:text-neutral-300">
-              <a href="tel:+351919245067" className="block hover:text-brand-primary">📞 919 245 067</a>
+              <a href="tel:+351919245067" className="block hover:text-brand-primary">📞 919 245 067 ( Principal )</a>
+              <a href="tel:+351917781922" className="block hover:text-brand-primary">📞 917 781 922</a>
               <a href="mailto:cantodaspatasepelos@gmail.com" className="block hover:text-brand-primary break-all">✉️ cantodaspatasepelos@gmail.com</a>
               <a href="https://www.instagram.com/canto_das_patas_e_pelos" target="_blank" rel="noopener noreferrer" className="block hover:text-brand-primary">📷 @canto_das_patas_e_pelos</a>
             </div>
