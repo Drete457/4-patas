@@ -7,8 +7,8 @@ import logo from '../../imagens/logo.jpeg';
 const navItems = [
   { href: '#inicio', label: 'Início' },
   { href: '#servicos', label: 'Serviços' },
-  { href: '#produtos', label: 'Produtos' },
   { href: '#precos', label: 'Preços' },
+  { href: '#produtos', label: 'Produtos' },
   { href: '#testemunhos', label: 'Testemunhos' },
   { href: '#contacto', label: 'Contacto' }
 ];
