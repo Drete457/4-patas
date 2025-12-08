@@ -77,7 +77,7 @@ export default function Navbar() {
             aria-label="Alternar tema"
             className="p-2 rounded-lg border border-neutral-200 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
           >
-            {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
+            {isDark ? <SunIcon className="w-5 h-5 text-yellow-400" /> : <MoonIcon className="w-5 h-5 text-neutral-700" />}
           </button>
         </div>
         <button onClick={() => setOpen(o => !o)} className="md:hidden p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Menu">
@@ -96,7 +96,7 @@ export default function Navbar() {
             onClick={() => { toggleTheme(); setOpen(false); }}
             className="w-full flex items-center justify-center gap-2 py-2 text-sm font-medium rounded-lg border border-neutral-200 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
           >
-            {isDark ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />} {isDark ? 'Tema Claro' : 'Tema Escuro'}
+            {isDark ? <SunIcon className="w-5 h-5 text-yellow-400" /> : <MoonIcon className="w-5 h-5 text-neutral-700" />} {isDark ? 'Tema Claro' : 'Tema Escuro'}
           </button>
         </div>
       )}
