@@ -40,15 +40,20 @@ const testimonyImages = [
   { id: 36, src: new URL('../../imagens/testimonies/testemunho (36).jpeg', import.meta.url).href },
 ];
 
-function getRandomTestimonies(count: number) {
-  const shuffled = [...testimonyImages].sort(() => Math.random() - 0.5);
+// Função para selecionar testemunhos aleatórios sem duplicados
+function getRandomTestimonies(count: number, exclude: number[] = []) {
+  const available = testimonyImages.filter(img => !exclude.includes(img.id));
+  const shuffled = [...available].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, count);
 }
 
 export default function Testimonials() {
   const [showAll, setShowAll] = useState(false);
   const randomInitial = useMemo(() => getRandomTestimonies(3), []);
-  const randomExtra = useMemo(() => getRandomTestimonies(7), []);
+  const randomExtra = useMemo(() => {
+    const initialIds = randomInitial.map(img => img.id);
+    return getRandomTestimonies(7, initialIds);
+  }, [randomInitial]);
 
   const displayedImages = showAll ? [...randomInitial, ...randomExtra] : randomInitial;
 
@@ -83,6 +88,17 @@ export default function Testimonials() {
               className="btn-primary"
             >
               Ver Mais Testemunhos
+            </button>
+          </div>
+        )}
+
+        {showAll && (
+          <div className="text-center">
+            <button 
+              onClick={() => setShowAll(false)}
+              className="btn-primary !bg-neutral-800 dark:!bg-neutral-200 dark:!text-neutral-900 hover:!bg-neutral-700 dark:hover:!bg-white"
+            >
+              Ver Menos
             </button>
           </div>
         )}

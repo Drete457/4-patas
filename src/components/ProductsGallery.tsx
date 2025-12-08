@@ -90,6 +90,17 @@ export default function ProductsGallery() {
           </div>
         )}
 
+        {hasMore && showAll && (
+          <div className="text-center mt-8">
+            <button 
+              onClick={() => setShowAll(false)}
+              className="btn-primary !bg-neutral-800 dark:!bg-neutral-200 dark:!text-neutral-900 hover:!bg-neutral-700 dark:hover:!bg-white"
+            >
+              Ver Menos
+            </button>
+          </div>
+        )}
+
         {filteredProducts.length === 0 && (
           <p className="text-center text-neutral-500 dark:text-neutral-400 py-12">Sem produtos nesta categoria.</p>
         )}

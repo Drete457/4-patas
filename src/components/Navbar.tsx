@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { SunIcon, MoonIcon } from './icons';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import logo from '../../imagens/logo.jpg';
+import logo from '../../imagens/logo.jpeg';
 
 const navItems = [
   { href: '#inicio', label: 'Início' },

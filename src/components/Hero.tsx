@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import { products } from '../data/products';
 
-// Seleciona 4 produtos aleatórios
+// Seleciona produtos aleatórios sem duplicados usando Fisher-Yates shuffle
 function getRandomProducts(count: number) {
-  const shuffled = [...products].sort(() => Math.random() - 0.5);
+  const shuffled = [...products];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
   return shuffled.slice(0, count);
 }
 
