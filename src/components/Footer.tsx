@@ -35,8 +35,8 @@ export default function Footer() {
           <nav className="flex flex-wrap gap-6 text-sm text-neutral-600 dark:text-neutral-400">
             <a href="#inicio" className="hover:text-brand-primary">Início</a>
             <a href="#servicos" className="hover:text-brand-primary">Serviços</a>
-            <a href="#produtos" className="hover:text-brand-primary">Produtos</a>
             <a href="#precos" className="hover:text-brand-primary">Preços</a>
+            <a href="#produtos" className="hover:text-brand-primary">Produtos</a>
             <a href="#testemunhos" className="hover:text-brand-primary">Testemunhos</a>
             <a href="#contacto" className="hover:text-brand-primary">Contacto</a>
           </nav>
