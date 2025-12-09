@@ -3,7 +3,7 @@ import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
 export default function PriceTables() {
-  const [selectedAnimal, setSelectedAnimal] = useState<'Cão' | 'Gato'>('Cão');
+  const [selectedAnimal, setSelectedAnimal] = useState<'Cão' | 'Gato'>('Gato');
   const [selectedDuration, setSelectedDuration] = useState<string>('');
 
   const getWhatsAppLink = (planId: string, planName: string) => {
@@ -50,17 +50,6 @@ export default function PriceTables() {
                     <div className="mb-4">
                       <div className="flex gap-2 mb-3">
                         <button
-                          onClick={() => { setSelectedAnimal('Cão'); setSelectedDuration(''); }}
-                          className={
-                            'flex-1 py-2 px-3 rounded-lg text-sm font-medium transition border ' +
-                            (selectedAnimal === 'Cão'
-                              ? 'bg-brand-primary text-white border-brand-primary'
-                              : 'bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700 hover:border-brand-primary')
-                          }
-                        >
-                          🐶 Cão
-                        </button>
-                        <button
                           onClick={() => { setSelectedAnimal('Gato'); setSelectedDuration(''); }}
                           className={
                             'flex-1 py-2 px-3 rounded-lg text-sm font-medium transition border ' +
@@ -70,6 +59,17 @@ export default function PriceTables() {
                           }
                         >
                           🐱 Gato
+                        </button>
+                        <button
+                          onClick={() => { setSelectedAnimal('Cão'); setSelectedDuration(''); }}
+                          className={
+                            'flex-1 py-2 px-3 rounded-lg text-sm font-medium transition border ' +
+                            (selectedAnimal === 'Cão'
+                              ? 'bg-brand-primary text-white border-brand-primary'
+                              : 'bg-white dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 border-neutral-200 dark:border-neutral-700 hover:border-brand-primary')
+                          }
+                        >
+                          🐶 Cão
                         </button>
                       </div>
                       
