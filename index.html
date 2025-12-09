@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/jpeg" href="/imagens/logo.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Canto das Patas & Pelos</title>
-    <meta name="description" content="Hotel particular, bem-estar e produtos artesanais para animais de estimação." />
+    <title>Canto das Patas & Pelos | Hotel & Creche para Animais em Almada</title>
+    <meta name="description" content="Hotel e creche para cães, gatos e exóticos em Almada. Cuidado personalizado, sem boxes, 3 passeios diários e produtos artesanais. Contacte-nos: 919 245 067" />
     <meta name="theme-color" content="#f97316" />
+    <meta name="keywords" content="hotel cães Almada, creche animais, pet hotel, cuidador animais, hotel gatos, produtos artesanais animais" />
     <!-- Open Graph / Social -->
-    <meta property="og:title" content="Canto das Patas & Pelos" />
-    <meta property="og:description" content="Hotel particular, cuidado afetivo e produtos artesanais para o bem-estar do teu companheiro." />
+    <meta property="og:title" content="Canto das Patas & Pelos | Hotel & Creche em Almada" />
+    <meta property="og:description" content="Hotel e creche para cães, gatos e exóticos em Almada. Cuidado personalizado, sem boxes, 3 passeios diários. Contacte: 919 245 067" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_PT" />
     <meta property="og:image" content="/imagens/logo.jpeg" />
@@ -18,9 +19,76 @@
     <meta name="twitter:title" content="Canto das Patas & Pelos" />
     <meta name="twitter:description" content="Hotel particular, cuidado afetivo e produtos artesanais." />
     <meta name="twitter:image" content="/imagens/logo.jpeg" />
-    <link rel="canonical" href="https://www.exemplo.com/" />
+    <link rel="canonical" href="https://www.cantodaspatasepelos.pt/" />
     <meta name="author" content="Canto das Patas & Pelos" />
     <meta name="robots" content="index,follow" />
+    <meta name="geo.region" content="PT-15" />
+    <meta name="geo.placename" content="Almada" />
+    
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Canto das Patas & Pelos",
+      "description": "Hotel e creche para cães, gatos e animais exóticos em Almada. Cuidado personalizado sem boxes, 3 passeios diários e produtos artesanais.",
+      "image": "/imagens/logo.jpeg",
+      "@id": "https://www.cantodaspatasepelos.pt",
+      "url": "https://www.cantodaspatasepelos.pt",
+      "telephone": "+351919245067",
+      "email": "cantodaspatasepelos@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Padre Angelo Firmino da Silva",
+        "addressLocality": "Almada",
+        "addressRegion": "Setúbal",
+        "postalCode": "2800",
+        "addressCountry": "PT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.6793,
+        "longitude": -9.1565
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "09:30",
+        "closes": "21:30"
+      },
+      "priceRange": "€€",
+      "sameAs": [
+        "https://www.instagram.com/canto_das_patas_e_pelos"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Hotel para Cães",
+            "description": "Estadia completa com 3 passeios diários",
+            "price": "20",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Hotel para Gatos",
+            "description": "Estadia completa com cuidado personalizado",
+            "price": "15",
+            "priceCurrency": "EUR"
+          },
+          {
+            "@type": "Offer",
+            "name": "Creche",
+            "description": "Das 9h30 às 21h30",
+            "price": "10",
+            "priceCurrency": "EUR"
+          }
+        ]
+      }
+    }
+    </script>
   </head>
   <body class="antialiased bg-neutral-50 text-neutral-800">
     <script>
@@ -34,7 +102,6 @@
         } catch (e) {}
       })();
     </script>
-    <a href="#conteudo-principal" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white border border-neutral-300 px-4 py-2 rounded shadow-soft text-sm font-medium">Saltar para conteúdo</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

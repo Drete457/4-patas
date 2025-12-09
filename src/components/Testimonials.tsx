@@ -1,4 +1,6 @@
 import { useState, useMemo } from 'react';
+import Lightbox from './Lightbox';
+import LazyImage from './LazyImage';
 
 // Importar todas as imagens de testemunhos
 const testimonyImages = [
@@ -49,6 +51,7 @@ function getRandomTestimonies(count: number, exclude: number[] = []) {
 
 export default function Testimonials() {
   const [showAll, setShowAll] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const randomInitial = useMemo(() => getRandomTestimonies(3), []);
   const randomExtra = useMemo(() => {
     const initialIds = randomInitial.map(img => img.id);
@@ -57,10 +60,15 @@ export default function Testimonials() {
 
   const displayedImages = showAll ? [...randomInitial, ...randomExtra] : randomInitial;
 
+  const openLightbox = (index: number) => setLightboxIndex(index);
+  const closeLightbox = () => setLightboxIndex(null);
+  const prevImage = () => setLightboxIndex(prev => prev !== null ? (prev - 1 + displayedImages.length) % displayedImages.length : null);
+  const nextImage = () => setLightboxIndex(prev => prev !== null ? (prev + 1) % displayedImages.length : null);
+
   return (
   <section id="testemunhos" className="section dark:bg-neutral-950">
       <div className="container-section">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-12 animate-on-scroll">
           <h2 className="text-3xl sm:text-4xl font-bold title-gradient mb-4">Testemunhos</h2>
           <p className="text-neutral-600 dark:text-neutral-200">Veja o que os nossos clientes dizem através das suas experiências.</p>
         </div>
@@ -69,14 +77,22 @@ export default function Testimonials() {
           {displayedImages.map((img, idx) => (
             <div 
               key={img.id} 
-              className="group relative aspect-square rounded-2xl overflow-hidden shadow-soft border border-neutral-200 dark:border-neutral-700 bg-sand dark:bg-neutral-900"
+              className="group relative aspect-square rounded-2xl overflow-hidden shadow-soft border border-neutral-200 dark:border-neutral-700 bg-sand dark:bg-neutral-900 cursor-pointer animate-on-scroll"
+              onClick={() => openLightbox(idx)}
+              style={{ animationDelay: `${idx * 100}ms` }}
             >
-              <img 
+              <LazyImage 
                 src={img.src} 
                 alt={`Testemunho ${img.id}`}
-                loading={idx < 3 ? undefined : 'lazy'}
+                priority={idx < 3}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                skeletonClassName="rounded-2xl"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">
+                  Clique para ampliar
+                </span>
+              </div>
             </div>
           ))}
         </div>
@@ -103,6 +119,17 @@ export default function Testimonials() {
           </div>
         )}
       </div>
+
+      {/* Lightbox */}
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={displayedImages}
+          currentIndex={lightboxIndex}
+          onClose={closeLightbox}
+          onPrev={prevImage}
+          onNext={nextImage}
+        />
+      )}
     </section>
   );
 }

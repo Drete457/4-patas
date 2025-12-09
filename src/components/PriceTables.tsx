@@ -19,7 +19,7 @@ export default function PriceTables() {
   return (
     <section id="precos" className="section bg-sand/60 dark:bg-neutral-950">
       <div className="container-section">
-        <div className="text-center mb-12 max-w-2xl mx-auto">
+        <div className="text-center mb-12 max-w-2xl mx-auto animate-on-scroll">
           <h2 className="text-3xl sm:text-4xl font-bold title-gradient mb-4">Planos & Valores</h2>
           <p className="text-neutral-600 dark:text-neutral-300">Escolhe o formato ideal para a rotina do teu companheiro. Transparência e carinho em cada opção.</p>
         </div>

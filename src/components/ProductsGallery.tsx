@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { products, categories, type CategoryId } from '../data/products';
+import LazyImage from './LazyImage';
 
 export default function ProductsGallery() {
   const [activeCategory, setActiveCategory] = useState<CategoryId | 'all'>('all');
@@ -24,7 +25,7 @@ export default function ProductsGallery() {
   return (
     <section id="produtos" className="section bg-white dark:bg-neutral-950">
       <div className="container-section">
-        <div className="flex items-end justify-between mb-6 flex-wrap gap-4">
+        <div className="flex items-end justify-between mb-6 flex-wrap gap-4 animate-on-scroll">
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold title-gradient mb-3">Produtos Artesanais</h2>
             <p className="text-neutral-600 dark:text-neutral-300 max-w-xl">Qualidade afetiva e responsabilidade em cada detalhe. Uma amostra do que produzimos com carinho.</p>
@@ -63,10 +64,19 @@ export default function ProductsGallery() {
 
         {/* Grid de produtos */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {displayedProducts.map(p => (
-            <div key={p.id} className="group relative bg-sand dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-soft border border-neutral-200 dark:border-neutral-700">
+          {displayedProducts.map((p, idx) => (
+            <div 
+              key={p.id} 
+              className="group relative bg-sand dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-soft border border-neutral-200 dark:border-neutral-700 animate-on-scroll"
+              style={{ transitionDelay: `${(idx % 4) * 100}ms` }}
+            >
               <div className="aspect-square overflow-hidden">
-                <img src={p.image} alt={p.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition" />
+                <LazyImage 
+                  src={p.image} 
+                  alt={p.name} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition"
+                  skeletonClassName="rounded-t-2xl"
+                />
               </div>
               <div className="p-4">
                 <h3 className="font-semibold mb-1 text-neutral-900 dark:text-white text-sm">{p.name}</h3>

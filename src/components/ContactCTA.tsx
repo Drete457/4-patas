@@ -1,7 +1,7 @@
 export default function ContactCTA() {
   return (
     <section id="contacto" className="section bg-gradient-to-br from-brand-primary/10 via-sand to-white dark:from-neutral-900 dark:via-neutral-900 dark:to-neutral-950">
-      <div className="container-section text-center max-w-3xl mx-auto">
+      <div className="container-section text-center max-w-3xl mx-auto animate-on-scroll">
         <h2 className="text-3xl sm:text-4xl font-bold mb-6 title-gradient">Pronto para reservar ou saber mais?</h2>
         <p className="text-neutral-600 dark:text-neutral-300 mb-8">Fala connosco e garante uma experiência segura, afetiva e enriquecedora para o teu companheiro. Respondemos com rapidez.</p>
         <div className="flex flex-wrap justify-center gap-4">

@@ -14,6 +14,20 @@ function getRandomProducts(count: number) {
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [randomProducts] = useState(() => getRandomProducts(4));
+  const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([]);
+
+  // Pré-carrega todas as imagens do slider
+  useEffect(() => {
+    const loadStates = new Array(randomProducts.length).fill(false);
+    randomProducts.forEach((product, idx) => {
+      const img = new Image();
+      img.src = product.image;
+      img.onload = () => {
+        loadStates[idx] = true;
+        setImagesLoaded([...loadStates]);
+      };
+    });
+  }, [randomProducts]);
 
   // Auto-avança o slider a cada 4 segundos
   useEffect(() => {
@@ -26,7 +40,7 @@ export default function Hero() {
   return (
     <section id="inicio" className="section pt-32 bg-gradient-to-br from-brand-primary/10 via-sand to-white dark:from-neutral-900 dark:via-neutral-900 dark:to-neutral-950">
       <div className="container-section grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
+        <div className="space-y-6 animate-on-scroll visible">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-neutral-900 dark:text-white">
             <span className="title-gradient">Cuidado dedicado</span><br/>alegria e bem-estar para o seu companheiro.
           </h1>
@@ -39,8 +53,8 @@ export default function Hero() {
         </div>
         
         {/* Slider de produtos */}
-        <div className="relative group">
-          <div className="aspect-square rounded-3xl overflow-hidden shadow-soft ring-4 ring-white/60 dark:ring-neutral-800">
+        <div className="relative group animate-on-scroll visible" style={{ transitionDelay: '200ms' }}>
+          <div className="aspect-square rounded-3xl overflow-hidden shadow-soft ring-4 ring-white/60 dark:ring-neutral-800 bg-neutral-200 dark:bg-neutral-800">
             {randomProducts.map((product, idx) => (
               <div
                 key={product.id}
@@ -49,12 +63,15 @@ export default function Hero() {
                   (idx === currentSlide ? 'opacity-100' : 'opacity-0')
                 }
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading={idx === 0 ? undefined : 'lazy'}
-                />
+                {imagesLoaded[idx] ? (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="w-full h-full animate-pulse bg-gradient-to-r from-neutral-200 via-neutral-300 to-neutral-200 dark:from-neutral-700 dark:via-neutral-600 dark:to-neutral-700" />
+                )}
               </div>
             ))}
           </div>
