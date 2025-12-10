@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import Lightbox from './Lightbox';
 import LazyImage from './LazyImage';
 
@@ -52,6 +52,7 @@ function getRandomTestimonies(count: number, exclude: number[] = []) {
 export default function Testimonials() {
   const [showAll, setShowAll] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const randomInitial = useMemo(() => getRandomTestimonies(3), []);
   const randomExtra = useMemo(() => {
     const initialIds = randomInitial.map(img => img.id);
@@ -65,8 +66,16 @@ export default function Testimonials() {
   const prevImage = () => setLightboxIndex(prev => prev !== null ? (prev - 1 + displayedImages.length) % displayedImages.length : null);
   const nextImage = () => setLightboxIndex(prev => prev !== null ? (prev + 1) % displayedImages.length : null);
 
+  const handleShowLess = () => {
+    setShowAll(false);
+    // Scroll suave para o início da secção
+    setTimeout(() => {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  };
+
   return (
-  <section id="testemunhos" className="section dark:bg-neutral-950">
+  <section ref={sectionRef} id="testemunhos" className="section dark:bg-neutral-950">
       <div className="container-section">
         <div className="text-center max-w-2xl mx-auto mb-12 animate-on-scroll">
           <h2 className="text-3xl sm:text-4xl font-bold title-gradient mb-4">Testemunhos</h2>
@@ -111,7 +120,7 @@ export default function Testimonials() {
         {showAll && (
           <div className="text-center">
             <button 
-              onClick={() => setShowAll(false)}
+              onClick={handleShowLess}
               className="btn-primary !bg-neutral-800 dark:!bg-neutral-200 dark:!text-neutral-900 hover:!bg-neutral-700 dark:hover:!bg-white"
             >
               Ver Menos

@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { products, categories, type CategoryId } from '../data/products';
 import LazyImage from './LazyImage';
 
 export default function ProductsGallery() {
   const [activeCategory, setActiveCategory] = useState<CategoryId | 'all'>('all');
   const [showAll, setShowAll] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const filteredProducts = activeCategory === 'all'
     ? products
@@ -22,22 +23,23 @@ export default function ProductsGallery() {
     setShowAll(false); // Reset ao mudar de categoria
   };
 
+  const handleShowLess = () => {
+    setShowAll(false);
+    // Scroll suave para o início da secção
+    setTimeout(() => {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  };
+
   return (
-    <section id="produtos" className="section bg-white dark:bg-neutral-950">
+    <section ref={sectionRef} id="produtos" className="section bg-white dark:bg-neutral-950">
       <div className="container-section">
         <div className="flex items-end justify-between mb-6 flex-wrap gap-4 animate-on-scroll">
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold title-gradient mb-3">Produtos Artesanais</h2>
             <p className="text-neutral-600 dark:text-neutral-300 max-w-xl">Qualidade afetiva e responsabilidade em cada detalhe. Uma amostra do que produzimos com carinho.</p>
           </div>
-          <a 
-            href="https://wa.me/351919245067?text=Ol%C3%A1%2C%20estou%20interessado%20num%20dos%20teus%20produtos" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn-primary"
-          >
-            Encomendar
-          </a>
+          <a href="#contacto" className="btn-primary">Encomendar</a>
         </div>
 
         {/* Filtros por categoria */}
@@ -125,7 +127,7 @@ export default function ProductsGallery() {
         {hasMore && showAll && (
           <div className="text-center mt-8">
             <button 
-              onClick={() => setShowAll(false)}
+              onClick={handleShowLess}
               className="btn-primary !bg-neutral-800 dark:!bg-neutral-200 dark:!text-neutral-900 hover:!bg-neutral-700 dark:hover:!bg-white"
             >
               Ver Menos
