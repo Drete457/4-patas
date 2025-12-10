@@ -8,6 +8,7 @@ import Testimonials from './components/Testimonials';
 import ContactCTA from './components/ContactCTA';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   // Scroll animations observer
@@ -62,6 +63,7 @@ function App() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <ScrollToTop />
     </>
   );
 }

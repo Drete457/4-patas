@@ -13,12 +13,16 @@
     <meta property="og:description" content="Hotel e creche para cães, gatos e exóticos em Almada. Cuidado personalizado, sem boxes, 3 passeios diários. Contacte: 919 245 067" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_PT" />
-    <meta property="og:image" content="/imagens/logo.jpeg" />
-    <meta property="og:image:alt" content="Logotipo Canto das Patas & Pelos" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://www.cantodaspatasepelos.pt/" />
+    <meta property="og:site_name" content="Canto das Patas & Pelos" />
+    <meta property="og:image" content="https://www.cantodaspatasepelos.pt/imagens/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Canto das Patas & Pelos - Hotel e Creche para Animais em Almada" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Canto das Patas & Pelos" />
-    <meta name="twitter:description" content="Hotel particular, cuidado afetivo e produtos artesanais." />
-    <meta name="twitter:image" content="/imagens/logo.jpeg" />
+    <meta name="twitter:description" content="Hotel particular, cuidado afetivo e produtos artesanais para o seu animal." />
+    <meta name="twitter:image" content="https://www.cantodaspatasepelos.pt/imagens/og-image.jpg" />
     <link rel="canonical" href="https://www.cantodaspatasepelos.pt/" />
     <meta name="author" content="Canto das Patas & Pelos" />
     <meta name="robots" content="index,follow" />
@@ -102,6 +106,46 @@
         } catch (e) {}
       })();
     </script>
+    
+    <!-- Loading Spinner - escondido quando App carrega -->
+    <div id="loading-spinner" style="
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fef7ed 0%, #fff 50%, #fef7ed 100%);
+      z-index: 9999;
+      transition: opacity 0.3s ease-out;
+    ">
+      <div style="
+        width: 60px;
+        height: 60px;
+        border: 4px solid #fed7aa;
+        border-top-color: #f97316;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      "></div>
+      <p style="
+        margin-top: 16px;
+        font-family: system-ui, sans-serif;
+        font-size: 14px;
+        color: #78716c;
+      ">A carregar...</p>
+      <style>
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+        .dark #loading-spinner {
+          background: linear-gradient(135deg, #171717 0%, #0a0a0a 50%, #171717 100%) !important;
+        }
+        .dark #loading-spinner p {
+          color: #a3a3a3 !important;
+        }
+      </style>
+    </div>
+    
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
