@@ -25,62 +25,62 @@ export interface ProductItem {
 }
 
 // === CATS ===
-import catArranhador from '../../imagens/cats/Arranhador para gatos.jpeg';
-import catBolaAmigurumi from '../../imagens/cats/Bola amigurumi.jpeg';
-import catBolaPenas from '../../imagens/cats/Bola c.Penas Gato.jpeg';
-import catBolaXS from '../../imagens/cats/Bola-XS.jpeg';
-import catTrapilho from '../../imagens/cats/Brinquedo trapilho.jpeg';
-import catCobraAmigurumi from '../../imagens/cats/Cobra Amigurumi Gato-S_2.jpeg';
+import catArranhador from '../../imagens/cats/Arranhador para gatos.webp';
+import catBolaAmigurumi from '../../imagens/cats/Bola amigurumi.webp';
+import catBolaPenas from '../../imagens/cats/Bola c.Penas Gato.webp';
+import catBolaXS from '../../imagens/cats/Bola-XS.webp';
+import catTrapilho from '../../imagens/cats/Brinquedo trapilho.webp';
+import catCobraAmigurumi from '../../imagens/cats/Cobra Amigurumi Gato-S_2.webp';
 
 // === DOGS ===
-import dogBolaAmigurumi from '../../imagens/dogs/Bola amigurumi.jpeg';
-import dogBolaXS from '../../imagens/dogs/Bola-XS.jpeg';
-import dogTrapilho from '../../imagens/dogs/Brinquedo trapilho.jpeg';
-import dogCordaBolaS from '../../imagens/dogs/Corda c.bola-S.jpeg';
-import dogCordaBolaXS from '../../imagens/dogs/Corda c.bola-XS.jpeg';
-import dogCordaBolasM from '../../imagens/dogs/Corda c.bolas-M.jpeg';
+import dogBolaAmigurumi from '../../imagens/dogs/Bola amigurumi.webp';
+import dogBolaXS from '../../imagens/dogs/Bola-XS.webp';
+import dogTrapilho from '../../imagens/dogs/Brinquedo trapilho.webp';
+import dogCordaBolaS from '../../imagens/dogs/Corda c.bola-S.webp';
+import dogCordaBolaXS from '../../imagens/dogs/Corda c.bola-XS.webp';
+import dogCordaBolasM from '../../imagens/dogs/Corda c.bolas-M.webp';
 
 // === EXOTICS ===
-import exoBolaCiselArgola from '../../imagens/exotics/Bola Cisel Argola.jpeg';
-import exoBolasCisel from '../../imagens/exotics/Bolas Cisel.jpeg';
-import exoBrinquedoRoedoresL from '../../imagens/exotics/brinquedo roedores-L.jpeg';
-import exoBrinquedoRoedores from '../../imagens/exotics/brinquedo roedores.jpeg';
-import exoCaixasRoedores from '../../imagens/exotics/Caixas para roedores.jpeg';
-import exoCaixasRoedores2 from '../../imagens/exotics/Caixas para roedores_2.jpeg';
-import exoOvoPequenosRoedores from '../../imagens/exotics/Ovo pequenos roedores.jpeg';
-import exoRedeRoedoresGrandes from '../../imagens/exotics/rede para roedores grandes.jpeg';
+import exoBolaCiselArgola from '../../imagens/exotics/Bola Cisel Argola.webp';
+import exoBolasCisel from '../../imagens/exotics/Bolas Cisel.webp';
+import exoBrinquedoRoedoresL from '../../imagens/exotics/brinquedo roedores-L.webp';
+import exoBrinquedoRoedores from '../../imagens/exotics/brinquedo roedores.webp';
+import exoCaixasRoedores from '../../imagens/exotics/Caixas para roedores.webp';
+import exoCaixasRoedores2 from '../../imagens/exotics/Caixas para roedores_2.webp';
+import exoOvoPequenosRoedores from '../../imagens/exotics/Ovo pequenos roedores.webp';
+import exoRedeRoedoresGrandes from '../../imagens/exotics/rede para roedores grandes.webp';
 
 // === PEOPLE ===
-import peopleSweat from '../../imagens/people/Sweat\'s.jpeg';
+import peopleSweat from '../../imagens/people/Sweat\'s.webp';
 // Amigurumi
-import pAmigurumiAbobora from '../../imagens/people/Amigurumi/Amigurumi abóbora spooky-S.jpeg';
-import pAmigurumiAbobora2 from '../../imagens/people/Amigurumi/Amigurumi abóbora-S.jpeg';
-import pAmigurumiAbobora3 from '../../imagens/people/Amigurumi/Amigurumi abóbora_2-S.jpeg';
-import pAmigurumiBola from '../../imagens/people/Amigurumi/Bola amigurumi.jpeg';
-import pAmigurumiCaveira from '../../imagens/people/Amigurumi/Caveira Amigurumi.jpeg';
-import pAmigurumiCaveira2 from '../../imagens/people/Amigurumi/Caveira Amigurumi_2.jpeg';
-import pAmigurumiCaveira3 from '../../imagens/people/Amigurumi/Caveira Amigurumi_3.jpeg';
-import pAmigurumiCobra from '../../imagens/people/Amigurumi/Cobra Amigurumi.jpeg';
-import pAmigurumiHappyL from '../../imagens/people/Amigurumi/Happy Amigurumi-L.jpeg';
-import pAmigurumiHappyS from '../../imagens/people/Amigurumi/Happy Amigurumi-S.jpeg';
-import pAmigurumiHappy2S from '../../imagens/people/Amigurumi/Happy Amigurumi_2-S.jpeg';
-import pAmigurumiMascote from '../../imagens/people/Amigurumi/Mascote Amigurumi.jpeg';
-import pAmigurumiPolvoAzul from '../../imagens/people/Amigurumi/Polvo Amigurumi azul.jpeg';
-import pAmigurumiPolvoRosa from '../../imagens/people/Amigurumi/Polvo Amigurumi rosa.jpeg';
-import pAmigurumiPolvoRosa2 from '../../imagens/people/Amigurumi/Polvo Amigurumi rosa2.jpeg';
-import pAmigurumiPolvoRosaChoque from '../../imagens/people/Amigurumi/Polvo Amigurumi rosa_choque.jpeg';
+import pAmigurumiAbobora from '../../imagens/people/Amigurumi/Amigurumi abóbora spooky-S.webp';
+import pAmigurumiAbobora2 from '../../imagens/people/Amigurumi/Amigurumi abóbora-S.webp';
+import pAmigurumiAbobora3 from '../../imagens/people/Amigurumi/Amigurumi abóbora_2-S.webp';
+import pAmigurumiBola from '../../imagens/people/Amigurumi/Bola amigurumi.webp';
+import pAmigurumiCaveira from '../../imagens/people/Amigurumi/Caveira Amigurumi.webp';
+import pAmigurumiCaveira2 from '../../imagens/people/Amigurumi/Caveira Amigurumi_2.webp';
+import pAmigurumiCaveira3 from '../../imagens/people/Amigurumi/Caveira Amigurumi_3.webp';
+import pAmigurumiCobra from '../../imagens/people/Amigurumi/Cobra Amigurumi.webp';
+import pAmigurumiHappyL from '../../imagens/people/Amigurumi/Happy Amigurumi-L.webp';
+import pAmigurumiHappyS from '../../imagens/people/Amigurumi/Happy Amigurumi-S.webp';
+import pAmigurumiHappy2S from '../../imagens/people/Amigurumi/Happy Amigurumi_2-S.webp';
+import pAmigurumiMascote from '../../imagens/people/Amigurumi/Mascote Amigurumi.webp';
+import pAmigurumiPolvoAzul from '../../imagens/people/Amigurumi/Polvo Amigurumi azul.webp';
+import pAmigurumiPolvoRosa from '../../imagens/people/Amigurumi/Polvo Amigurumi rosa.webp';
+import pAmigurumiPolvoRosa2 from '../../imagens/people/Amigurumi/Polvo Amigurumi rosa2.webp';
+import pAmigurumiPolvoRosaChoque from '../../imagens/people/Amigurumi/Polvo Amigurumi rosa_choque.webp';
 // Misc
-import pMiscCoracao from '../../imagens/people/Misc/Coração Feltro.jpeg';
-import pMiscPata from '../../imagens/people/Misc/Pata Crochet.jpeg';
-import pMiscPompom from '../../imagens/people/Misc/pompom.jpeg';
+import pMiscCoracao from '../../imagens/people/Misc/Coração Feltro.webp';
+import pMiscPata from '../../imagens/people/Misc/Pata Crochet.webp';
+import pMiscPompom from '../../imagens/people/Misc/pompom.webp';
 // Porta-chaves
-import pPortaChavesPolvoAzul from '../../imagens/people/Porta-chaves/Polvo Amigurumi azul.jpeg';
-import pPortaChavesPolvoRosa from '../../imagens/people/Porta-chaves/Polvo Amigurumi rosa.jpeg';
-import pPortaChavesPolvoRosa2 from '../../imagens/people/Porta-chaves/Polvo Amigurumi rosa2.jpeg';
-import pPortaChavesPolvoRosaChoque from '../../imagens/people/Porta-chaves/Polvo Amigurumi rosa_choque.jpeg';
-import pPortaChavesAzul from '../../imagens/people/Porta-chaves/Porta chaves azul.jpeg';
-import pPortaChavesTricolour from '../../imagens/people/Porta-chaves/Porta chaves tricolour.jpeg';
-import pPortaChavesVermelho from '../../imagens/people/Porta-chaves/Porta chaves vermelho.jpeg';
+import pPortaChavesPolvoAzul from '../../imagens/people/Porta-chaves/Polvo Amigurumi azul.webp';
+import pPortaChavesPolvoRosa from '../../imagens/people/Porta-chaves/Polvo Amigurumi rosa.webp';
+import pPortaChavesPolvoRosa2 from '../../imagens/people/Porta-chaves/Polvo Amigurumi rosa2.webp';
+import pPortaChavesPolvoRosaChoque from '../../imagens/people/Porta-chaves/Polvo Amigurumi rosa_choque.webp';
+import pPortaChavesAzul from '../../imagens/people/Porta-chaves/Porta chaves azul.webp';
+import pPortaChavesTricolour from '../../imagens/people/Porta-chaves/Porta chaves tricolour.webp';
+import pPortaChavesVermelho from '../../imagens/people/Porta-chaves/Porta chaves vermelho.webp';
 
 export const products: ProductItem[] = [
   // GATOS
