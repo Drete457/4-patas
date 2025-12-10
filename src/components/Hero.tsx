@@ -64,11 +64,13 @@ export default function Hero() {
                 }
               >
                 {imagesLoaded[idx] ? (
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                  <div className="w-full h-full p-8 flex items-center justify-center bg-white dark:bg-neutral-800">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
                 ) : (
                   <div className="w-full h-full animate-pulse bg-gradient-to-r from-neutral-200 via-neutral-300 to-neutral-200 dark:from-neutral-700 dark:via-neutral-600 dark:to-neutral-700" />
                 )}

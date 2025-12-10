@@ -70,11 +70,11 @@ export default function ProductsGallery() {
               className="group relative bg-sand dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-soft border border-neutral-200 dark:border-neutral-700 animate-on-scroll"
               style={{ transitionDelay: `${(idx % 4) * 100}ms` }}
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="aspect-square overflow-hidden p-4 flex items-center justify-center bg-white dark:bg-neutral-800">
                 <LazyImage 
                   src={p.image} 
                   alt={p.name} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition"
+                  className="w-full h-full object-contain group-hover:scale-105 transition"
                   skeletonClassName="rounded-t-2xl"
                 />
               </div>
