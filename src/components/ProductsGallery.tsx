@@ -79,10 +79,25 @@ export default function ProductsGallery() {
                 />
               </div>
               <div className="p-4">
-                <h3 className="font-semibold mb-1 text-neutral-900 dark:text-white text-sm">{p.name}</h3>
+                <h3 className="font-semibold mb-2 text-neutral-900 dark:text-white">{p.name}</h3>
                 {p.subcategory && (
-                  <span className="inline-block text-xs bg-brand-primary/10 text-brand-primary px-2 py-0.5 rounded-full">{p.subcategory}</span>
+                  <span className="inline-block text-xs bg-brand-primary/10 text-brand-primary px-2 py-0.5 rounded-full mb-2">{p.subcategory}</span>
                 )}
+                {p.description && (
+                  <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-3 line-clamp-3">{p.description}</p>
+                )}
+                <div className="flex items-center justify-between mt-auto">
+                  <div>
+                    <p className="text-lg font-bold text-brand-primary">
+                      {p.price === 0 ? 'Sob consulta' : `€${p.price.toFixed(2)}`}
+                    </p>
+                    {p.price > 0 && (
+                      <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                        por unidade
+                      </p>
+                    )}
+                  </div>
+                </div>
               </div>
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black/50 via-black/10 to-transparent transition pointer-events-none" />
             </div>

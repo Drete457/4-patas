@@ -94,8 +94,22 @@ export default function Hero() {
           </div>
 
           {/* Badge do produto atual */}
-          <div className="absolute -bottom-4 -left-4 bg-white dark:bg-neutral-800 rounded-xl shadow-soft p-4 border border-neutral-100 dark:border-neutral-700 text-sm font-medium text-neutral-700 dark:text-neutral-200 max-w-[200px]">
-            {randomProducts[currentSlide]?.name || 'Produto artesanal'}
+          <div className="absolute -bottom-4 -left-4 bg-white dark:bg-neutral-800 rounded-xl shadow-soft p-4 border border-neutral-100 dark:border-neutral-700 max-w-[250px]">
+            <h3 className="text-sm font-semibold text-neutral-900 dark:text-white mb-1">
+              {randomProducts[currentSlide]?.name || 'Produto artesanal'}
+            </h3>
+            {randomProducts[currentSlide] && (
+              <>
+                <p className="text-lg font-bold text-brand-primary mb-1">
+                  {randomProducts[currentSlide].price === 0 ? 'Sob consulta' : `€${randomProducts[currentSlide].price.toFixed(2)}`}
+                </p>
+                {randomProducts[currentSlide].price > 0 && (
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                    por unidade
+                  </p>
+                )}
+              </>
+            )}
           </div>
         </div>
       </div>
