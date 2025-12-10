@@ -30,7 +30,14 @@ export default function ProductsGallery() {
             <h2 className="text-3xl sm:text-4xl font-bold title-gradient mb-3">Produtos Artesanais</h2>
             <p className="text-neutral-600 dark:text-neutral-300 max-w-xl">Qualidade afetiva e responsabilidade em cada detalhe. Uma amostra do que produzimos com carinho.</p>
           </div>
-          <a href="#contacto" className="btn-primary">Encomendar</a>
+          <a 
+            href="https://wa.me/351919245067?text=Ol%C3%A1%2C%20estou%20interessado%20num%20dos%20teus%20produtos" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-primary"
+          >
+            Encomendar
+          </a>
         </div>
 
         {/* Filtros por categoria */}
