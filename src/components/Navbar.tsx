@@ -81,20 +81,20 @@ export default function Navbar() {
           </button>
         </div>
         <button onClick={() => setOpen(o => !o)} className="md:hidden p-2 rounded hover:bg-neutral-100 dark:hover:bg-neutral-800" aria-label="Menu">
-          {open ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
+          {open ? <XMarkIcon className="h-6 w-6 text-neutral-700 dark:text-neutral-200" /> : <Bars3Icon className="h-6 w-6 text-neutral-700 dark:text-neutral-200" />}
         </button>
       </nav>
       {open && (
         <div className="md:hidden bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700 px-4 pb-4 space-y-2">
           {navItems.map(item => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-neutral-700 hover:text-brand-primary">
+            <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="block py-2 text-sm font-medium text-neutral-700 dark:text-neutral-200 hover:text-brand-primary">
               {item.label}
             </a>
           ))}
           <a href="#contacto" onClick={() => setOpen(false)} className="btn-primary w-full justify-center text-sm">Reservar</a>
           <button
             onClick={() => { toggleTheme(); setOpen(false); }}
-            className="w-full flex items-center justify-center gap-2 py-2 text-sm font-medium rounded-lg border border-neutral-200 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+            className="w-full flex items-center justify-center gap-2 py-2 text-sm font-medium text-neutral-700 dark:text-neutral-200 rounded-lg border border-neutral-200 dark:border-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
           >
             {isDark ? <SunIcon className="w-5 h-5 text-yellow-400" /> : <MoonIcon className="w-5 h-5 text-neutral-700" />} {isDark ? 'Tema Claro' : 'Tema Escuro'}
           </button>
