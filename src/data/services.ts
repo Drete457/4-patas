@@ -20,7 +20,7 @@ export const services: ServiceItem[] = [
   {
     icon: HeartIcon,
     title: 'Acompanhamento Diário',
-    desc: 'Fotos e vídeos via WhatsApp para o dono estar sempre informado. Máximo 2 animais por dono (cão+gato se comparáveis).'
+    desc: 'Fotos e vídeos via WhatsApp para o dono estar sempre informado. Máximo 2 animais por dono (cão+gato se compatíveis).'
   },
   {
     icon: BuildingStorefrontIcon,

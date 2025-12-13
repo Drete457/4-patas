@@ -36,7 +36,7 @@ export const plans: Plan[] = [
       { animal: 'Gato', duration: 'Mensal', price: '€360' }
     ],
     features: [
-      { label: '1 dono com máx. 2 animais (cão+gato se comparáveis)', included: true },
+      { label: '1 dono com máx. 2 animais (cão+gato se compatíveis)', included: true },
       { label: 'Sem boxes, animais dormem onde quiserem', included: true },
       { label: '3 passeios diários (até 2h no parque canino)', included: true },
       { label: 'Brinquedos, ossos de vaca e hastes de rena', included: true },
