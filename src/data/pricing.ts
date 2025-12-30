@@ -37,7 +37,7 @@ export const plans: Plan[] = [
     ],
     features: [
       { label: '1 dono com máx. 2 animais (cão+gato se compatíveis)', included: true },
-      { label: 'Sem boxes, animais dormem onde quiserem', included: true },
+      { label: 'Sem boxes, dormem dentro da casa no espaço que mais gostarem', included: true },
       { label: '3 passeios diários (até 2h no parque canino)', included: true },
       { label: 'Brinquedos, ossos de vaca e hastes de rena', included: true },
       { label: 'Fotos e vídeos diários via WhatsApp', included: true },
@@ -50,7 +50,7 @@ export const plans: Plan[] = [
     id: 'creche',
     name: 'Creche',
     price: '€10/dia',
-    description: 'Horário: 9h30 - 21h30. Atraso: +5€ a cada 5 min após 21h35.',
+    description: 'Horário: 9h30 - 21h30. Atraso: +5€ a cada hora de atraso após 21h35.',
     features: [
       { label: 'Horário fixo: 9h30 - 21h30', included: true },
       { label: 'Mesmas atividades do hotel', included: true },
