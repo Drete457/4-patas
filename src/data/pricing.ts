@@ -94,7 +94,7 @@ export const extras: Extra[] = [
   { 
     id: 'atraso', 
     name: 'Taxa de Atraso (Creche)', 
-    price: '+€5/5min', 
+    price: '+€5/hora', 
     description: 'Aplica-se após as 21h35.' 
   },
   { 
