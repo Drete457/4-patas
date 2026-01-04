@@ -200,8 +200,8 @@ export default function PriceTables() {
           <ul className="grid sm:grid-cols-3 gap-4">
             {specialConditions.map(condition => (
               <li key={condition.id} className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-                <p className="font-medium text-neutral-800 dark:text-neutral-100 mb-1">{condition.title}</p>
-                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">{condition.description}</p>
+                <p className="font-bold text-neutral-800 dark:text-neutral-100 mb-2 text-sm sm:text-base">{condition.title}</p>
+                <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">{condition.description}</p>
               </li>
             ))}
           </ul>
