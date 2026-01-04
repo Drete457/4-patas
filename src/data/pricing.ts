@@ -50,7 +50,7 @@ export const plans: Plan[] = [
     id: 'creche',
     name: 'Creche',
     price: '€10/dia',
-    description: 'Horário: 9h30 - 21h30. Atraso: +5€ a cada hora de atraso após 21h35.',
+    description: 'Horário: 9h30 - 21h30. Atraso: +5€ a cada 30 minutos de atraso após 21h35.',
     features: [
       { label: 'Horário fixo: 9h30 - 21h30', included: true },
       { label: 'Mesmas atividades do hotel', included: true },
@@ -100,7 +100,7 @@ export const extras: Extra[] = [
   { 
     id: 'atraso', 
     name: 'Taxa de Atraso (Creche)', 
-    price: '+€5/hora', 
+    price: '+€5/30minutos', 
     description: 'Aplica-se após as 21h35.' 
   },
   { 
