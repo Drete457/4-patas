@@ -26,7 +26,7 @@ export const plans: Plan[] = [
     name: 'Hotel',
     price: 'A partir de €15/dia',
     highlight: true,
-    description: 'Estadia completa com acompanhamento personalizado. Entrada a partir das 9h30.',
+    description: 'Estadia completa com acompanhamento personalizado. Entrada a partir das 9h30.\nAtraso: +5€ a cada 30 minutos de atraso após 21h35.',
     pricingOptions: [
       { animal: 'Cão', duration: 'Diária', price: '€20' },
       { animal: 'Cão', duration: 'Semanal', price: '€130' },
@@ -50,7 +50,7 @@ export const plans: Plan[] = [
     id: 'creche',
     name: 'Creche',
     price: '€10/dia',
-    description: 'Horário: 9h30 - 21h30. Atraso: +5€ a cada 30 minutos de atraso após 21h35.',
+    description: 'Horário: 9h30 - 21h30.\nAtraso: +5€ a cada 30 minutos de atraso após 21h35.',
     features: [
       { label: 'Horário fixo: 9h30 - 21h30', included: true },
       { label: 'Mesmas atividades do hotel', included: true },

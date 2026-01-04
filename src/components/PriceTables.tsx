@@ -43,7 +43,7 @@ export default function PriceTables() {
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-lg font-semibold mb-1 text-neutral-900 dark:text-white">{plan.name}</h3>
                   <p className="text-3xl font-bold mb-2 text-brand-primary">{plan.price}</p>
-                  <p className="text-sm text-neutral-600 dark:text-neutral-200 mb-4 leading-relaxed">{plan.description}</p>
+                  <p className="text-sm text-neutral-600 dark:text-neutral-200 mb-4 leading-relaxed whitespace-pre-line">{plan.description}</p>
                   
                   {/* Seleção de Animal para Hotel */}
                   {plan.pricingOptions && (
