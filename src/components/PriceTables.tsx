@@ -1,4 +1,4 @@
-import { plans, extras } from '../data/pricing';
+import { plans, extras, specialConditions } from '../data/pricing';
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
@@ -193,6 +193,18 @@ export default function PriceTables() {
               ))}
             </ul>
           <p className="text-xs text-neutral-500 dark:text-neutral-500 mt-6">* Valores indicativos — confirmar disponibilidade e condições no contacto.</p>
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-xl font-semibold mb-4 text-neutral-800 dark:text-neutral-100">Condições Especiais</h3>
+          <ul className="grid sm:grid-cols-3 gap-4">
+            {specialConditions.map(condition => (
+              <li key={condition.id} className="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                <p className="font-medium text-neutral-800 dark:text-neutral-100 mb-1">{condition.title}</p>
+                <p className="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed">{condition.description}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

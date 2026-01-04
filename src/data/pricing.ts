@@ -84,6 +84,12 @@ export interface Extra {
   description?: string;
 }
 
+export interface Condition {
+  id: string;
+  title: string;
+  description: string;
+}
+
 export const extras: Extra[] = [
   { 
     id: 'sinal', 
@@ -108,5 +114,23 @@ export const extras: Extra[] = [
     name: 'Desparasitantes (Pulgas)', 
     price: 'Custo real', 
     description: 'Se o animal entrar com pulgas, dono paga desparasitantes ou vem buscá-lo.' 
+  }
+];
+
+export const specialConditions: Condition[] = [
+  {
+    id: 'cancelamentos',
+    title: 'Cancelamentos em épocas especiais',
+    description: 'Em épocas especiais, o aviso deve ser feito com 6 meses de antecedência; caso contrário aplica-se uma taxa de 25€.'
+  },
+  {
+    id: 'higiene',
+    title: 'Higiene de taças e sacos',
+    description: 'Taças e sacos devem ser entregues limpos; itens sujos ou com comida solta têm taxa de higienização de 5€.'
+  },
+  {
+    id: 'natal-passagem',
+    title: 'Natal e Passagem de Ano',
+    description: 'Durante o Natal e Passagem de Ano, o valor da estadia é de 25€ por dia.'
   }
 ];
