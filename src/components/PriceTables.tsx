@@ -213,7 +213,7 @@ export default function PriceTables() {
             <ul className="grid sm:grid-cols-3 gap-4">
               {importantNotices.map(notice => (
                 <li key={notice.id} className="rounded-xl border border-neutral-200/60 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
-                  <p className="font-bold text-neutral-800 dark:text-neutral-100 mb-2 text-sm sm:text-base">{notice.title}</p>
+                  <p className="font-bold text-neutral-800 dark:text-neutral-100 mb-2 text-sm sm:text-base underline underline-offset-4">{notice.title}</p>
                   <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">{notice.description}</p>
                 </li>
               ))}
