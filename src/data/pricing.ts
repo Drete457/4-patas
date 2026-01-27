@@ -90,6 +90,12 @@ export interface Condition {
   description: string;
 }
 
+export interface ImportantNotice {
+  id: string;
+  title: string;
+  description: string;
+}
+
 export const extras: Extra[] = [
   { 
     id: 'sinal', 
@@ -132,5 +138,23 @@ export const specialConditions: Condition[] = [
     id: 'natal-passagem',
     title: 'Natal e Passagem de Ano',
     description: 'Durante o Natal e Passagem de Ano, o valor da estadia é de 25€ por dia.'
+  }
+];
+
+export const importantNotices: ImportantNotice[] = [
+  {
+    id: 'seguranca-reatividade',
+    title: 'Segurança e reatividade',
+    description: 'Animais que provocam outros animais ou apresentam reatividade exigem plano de treino e orientações a cumprir pelos tutores. O não cumprimento pode colocar em risco a segurança e levar à recusa ou suspensão do serviço.'
+  },
+  {
+    id: 'alimentacao',
+    title: 'Alimentação e rotina',
+    description: 'A ração deve ser armazenada e servida conforme indicação para evitar oxidação e recusa alimentar. Recomendamos porções controladas e horários consistentes.'
+  },
+  {
+    id: 'bem-estar',
+    title: 'Bem-estar acima de tudo',
+    description: 'As nossas recomendações de passeio, socialização e estímulos são ajustadas à personalidade do animal. Pedimos que os tutores mantenham o plano para resultados consistentes.'
   }
 ];

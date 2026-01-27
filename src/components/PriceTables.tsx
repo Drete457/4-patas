@@ -1,4 +1,4 @@
-import { plans, extras, specialConditions } from '../data/pricing';
+import { plans, extras, specialConditions, importantNotices } from '../data/pricing';
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
@@ -205,6 +205,20 @@ export default function PriceTables() {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="mt-10">
+          <div className="rounded-2xl border border-brand-primary/30 bg-brand-primary/5 dark:bg-brand-primary/10 p-6">
+            <h3 className="text-xl font-semibold mb-4 text-neutral-800 dark:text-neutral-100">Avisos Importantes</h3>
+            <ul className="grid sm:grid-cols-3 gap-4">
+              {importantNotices.map(notice => (
+                <li key={notice.id} className="rounded-xl border border-neutral-200/60 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+                  <p className="font-bold text-neutral-800 dark:text-neutral-100 mb-2 text-sm sm:text-base">{notice.title}</p>
+                  <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 leading-relaxed">{notice.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
